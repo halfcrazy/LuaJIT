@@ -81,6 +81,11 @@
   LUA_DIRSEP "\n" LUA_PATHSEP "\n" LUA_PATH_MARK "\n" \
   LUA_EXECDIR "\n" LUA_IGMARK
 
+/* Use readline for better interactive. */
+#if !defined(_WIN32)
+#define LUA_USE_READLINE
+#endif
+
 /* Quoting in error messages. */
 #define LUA_QL(x)	"'" x "'"
 #define LUA_QS		LUA_QL("%s")
